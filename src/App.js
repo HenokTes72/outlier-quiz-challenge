@@ -17,6 +17,7 @@ import {
 
 const Wrapper = styled(Flex)`
   border: 5px solid #ededed;
+  border-top-width: 8px;
   position: relative;
   padding-left: 80px;
   padding-right: 80px;
