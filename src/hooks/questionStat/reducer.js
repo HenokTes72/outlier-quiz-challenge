@@ -18,7 +18,7 @@ const questionStatReducer = (state, action) => {
     case SET_WORST_POSSIBLE_SCORE: {
       return {
         ...state,
-        setWorstPossibleScore: payload.setWorstPossibleScore
+        worstPossibleScore: payload.worstPossibleScore
       }
     }
     case SET_CURRENT_QUESTION: {
