@@ -16,7 +16,7 @@ const useQuestion = () => {
     bestPossibleScore: 100,
     worstPossibleScore: 0,
     currentScore: 0,
-    currentQuestion: null,
+    currentQuestion: '',
     currentQuestionIndex: -1,
     incorrectCount: 0
   })
