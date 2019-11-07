@@ -6,9 +6,9 @@ export default styled.div`
   border-radius: 5px;
   text-align: center;
   color: ${props => (props.isActive ? 'white' : 'black')}
-  opacity: ${props => (props.isAnswered && !props.isActive ? 0.5 : 1)}
+  opacity: ${props => (props.isAnswered && !props.isActive && !props.isCorrectAnswer ? 0.5 : 1)}
   background-color: ${props =>
-    props.isAnswered ? (props.isActive ? 'black' : '#ccc') : '#ececec'}
+    props.isAnswered ? (props.isActive ? 'black' : props.isCorrectAnswer ? 'white' : '#ccc') : '#ececec'}
   padding: 3px;
 
   &:hover {

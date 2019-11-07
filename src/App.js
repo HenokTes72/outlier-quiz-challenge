@@ -32,7 +32,7 @@ const Header = styled.div`
 const Upper = styled.div``
 const Lower = styled.div``
 
-function App () {
+function App() {
   const [
     questionState,
     setStarCount,
@@ -187,6 +187,7 @@ function App () {
           setAnswer={setAnswer}
           isAnswered={isAnswered}
           shouldResetSelIndex={shouldResetSelIndex}
+          correctAnswerIndex={correctAnswerIndex}
         />
         {isAnswered && (
           <Feedback isCorrect={isCorrect} nextQuestion={nextQuestion} />

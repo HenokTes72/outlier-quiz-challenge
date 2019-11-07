@@ -15,7 +15,7 @@ const getChoice = (choices, index) => {
   return unescape(choices[index])
 }
 
-const Choices = ({ choices, setAnswer, isAnswered, shouldResetSelIndex }) => {
+const Choices = ({ choices, setAnswer, isAnswered, shouldResetSelIndex, correctAnswerIndex }) => {
   const [selectedIndex, setSelectedIndex] = useState(-1)
 
   useEffect(() => {
@@ -36,6 +36,7 @@ const Choices = ({ choices, setAnswer, isAnswered, shouldResetSelIndex }) => {
           onClick={() => handleChoiceClick(FIRST_CHOICE)}
           isAnswered={isAnswered}
           isActive={selectedIndex === FIRST_CHOICE}
+          isCorrectAnswer={correctAnswerIndex === FIRST_CHOICE}
         >
           <TextChoiceStyle>{getChoice(choices, FIRST_CHOICE)}</TextChoiceStyle>
         </Button>
@@ -43,6 +44,7 @@ const Choices = ({ choices, setAnswer, isAnswered, shouldResetSelIndex }) => {
           onClick={() => handleChoiceClick(SECOND_CHOICE)}
           isAnswered={isAnswered}
           isActive={selectedIndex === SECOND_CHOICE}
+          isCorrectAnswer={correctAnswerIndex === SECOND_CHOICE}
         >
           <TextChoiceStyle>{getChoice(choices, SECOND_CHOICE)}</TextChoiceStyle>
         </Button>
@@ -54,6 +56,7 @@ const Choices = ({ choices, setAnswer, isAnswered, shouldResetSelIndex }) => {
             onClick={() => handleChoiceClick(THIRD_CHOICE)}
             isAnswered={isAnswered}
             isActive={selectedIndex === THIRD_CHOICE}
+            isCorrectAnswer={correctAnswerIndex === THIRD_CHOICE}
           >
             <TextChoiceStyle>
               {getChoice(choices, THIRD_CHOICE)}
@@ -63,6 +66,7 @@ const Choices = ({ choices, setAnswer, isAnswered, shouldResetSelIndex }) => {
             onClick={() => handleChoiceClick(FOURTH_CHOICE)}
             isAnswered={isAnswered}
             isActive={selectedIndex === FOURTH_CHOICE}
+            isCorrectAnswer={correctAnswerIndex === FOURTH_CHOICE}
           >
             <TextChoiceStyle>
               {getChoice(choices, FOURTH_CHOICE)}
@@ -78,7 +82,8 @@ Choices.propTypes = {
   choices: PropTypes.array.isRequired,
   setAnswer: PropTypes.func.isRequired,
   isAnswered: PropTypes.bool.isRequired,
-  shouldResetSelIndex: PropTypes.bool.isRequired
+  shouldResetSelIndex: PropTypes.bool.isRequired,
+  correctAnswerIndex: PropTypes.number.isRequired
 }
 
 export default Choices
