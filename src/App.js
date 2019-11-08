@@ -153,7 +153,7 @@ function App() {
 
   // proceed to the next question
   const nextQuestion = () => {
-    if (isQuestionOver()) {
+    if (isQuestionOver(currentQuestionIndex, questions.length)) {
       return
     }
 
@@ -163,7 +163,8 @@ function App() {
     setShouldResetSelIndex(true)
   }
 
-  const isQuestionOver = () => currentQuestionIndex === questions.length - 1
+  const isQuestionOver = (currentQuestionIndex, totalQuestions) =>
+    currentQuestionIndex === totalQuestions - 1
 
   // how far the user has progressed
   const getProgressPercent = () => {
